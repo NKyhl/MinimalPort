@@ -1,27 +1,27 @@
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Calendar from './pages/Calendar';
+import Safari from './pages/Safari';
+import Maps from './pages/Maps';
+import Photos from './pages/Photos';
+import Notes from './pages/Notes';
 import './App.css';
 
 function App() {
-  const listItems = [
-    { name: 'Profile', link: '/profile' },
-    { name: 'Calendar', link: '/calendar' },
-    { name: 'Safari', link: '/safari' },
-    { name: 'Maps', link: '/maps' },
-    { name: 'Photos', link: '/photos' },
-    { name: 'Notes', link: '/notes' },
-  ]
 
   return (
-    <div className="App">
-      <div className="menu">
-        <ol className="menu-list">
-          {listItems.map((item, index) => (
-            <li key={index} className="menu-item">
-              <a href={item.link} className="menu-item-link">{item.name}</a>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/safari" element={<Safari />} />
+        <Route path="/maps" element={<Maps />} />
+        <Route path="/photos" element={<Photos />} />
+        <Route path="/notes" element={<Notes />} />
+      </Routes>
+    </Router>
   );
 }
 
