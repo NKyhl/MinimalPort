@@ -31,3 +31,7 @@
   text-decoration: none;
   color: white;
 }
+
+.menu-item-link:hover {
+  text-decoration: underline;
+}
