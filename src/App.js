@@ -1,6 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Profile from './pages/Profile';
+import About from './pages/About';
 import Calendar from './pages/Calendar';
 import Safari from './pages/Safari';
 import Maps from './pages/Maps';
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<About />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/safari" element={<Safari />} />
         <Route path="/maps" element={<Maps />} />

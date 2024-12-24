@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   const listItems = [
-    { name: "Profile", link: "/profile" },
+    { name: "About", link: "/about" },
     { name: "Calendar", link: "/calendar" },
     { name: "Safari", link: "/safari" },
     { name: "Maps", link: "/maps" },
