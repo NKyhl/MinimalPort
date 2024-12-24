@@ -164,9 +164,11 @@
   
   .about-version {
     font-size: 10px;
+    margin-bottom: 12px;
   }
   
   .about-stat {
     font-size: 12px;
+    margin-bottom: 4px;
   }
 }
