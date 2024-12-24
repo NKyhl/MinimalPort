@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const listItems = [
+    { name: 'Profile', link: '/profile' },
+    { name: 'Calendar', link: '/calendar' },
+    { name: 'Safari', link: '/safari' },
+    { name: 'Maps', link: '/maps' },
+    { name: 'Photos', link: '/photos' },
+    { name: 'Notes', link: '/notes' },
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="menu">
+        <ol className="menu-list">
+          {listItems.map((item, index) => (
+            <li key={index} className="menu-item">
+              <a href={item.link} className="menu-item-link">{item.name}</a>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }
