@@ -4,6 +4,24 @@ import "./Calendar.css";
 export default function Calendar() {
   const navigate = useNavigate();
 
+  const events = [
+    {
+      title: "PARIVEDA — INCOMING 2025",
+      details: ["Software Engineer, Consultant I", "Chicago, Illinois"],
+      color: 'orange-bar'
+    },
+    {
+      title: "BNY — SUMMER 2024",
+      details: ["Software Engineer Intern", "Pittsburgh, Pennsylvania"],
+      color: 'teal-bar'
+    },
+    {
+      title: "HARBOR CAPITAL ADVISORS — SUMMER 2023",
+      details: ["Software & Data Engineer Intern", "Chicago, Illinois"],
+      color: 'navy-bar'
+    },
+  ]
+
   return (
     <div className="App">
       <div className="scrollable-page">
@@ -14,21 +32,14 @@ export default function Calendar() {
         </header>
         <div className="calendar-events">
           <ul>
-            <li>
-              <div className="event-header">PARIVEDA — INCOMING 2025</div>
-              <div className="event-detail orange-bar">Software Engineer, Consultant I</div>
-              <div className="event-detail orange-bar">Chicago, Illinois</div>
-            </li>
-            <li>
-              <div className="event-header">BNY — SUMMER 2024</div>
-              <div className="event-detail teal-bar">Software Engineer Intern</div>
-              <div className="event-detail teal-bar">Pittsburgh, Pennsylvania</div>
-            </li>
-            <li>
-              <div className="event-header">HARBOR CAPITAL ADVISORS — SUMMER 2023</div>
-              <div className="event-detail navy-bar">Software & Data Engineer Intern</div>
-              <div className="event-detail navy-bar">Chicago, Illinois</div>
-            </li>
+            {events.map((event, index) => (
+              <li key={index}>
+                <div className="event-header">{event.title}</div>
+                {event.details.map((detail, index) => (
+                  <div key={index} className={"event-detail " + event.color}>{detail}</div>
+                ))}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
